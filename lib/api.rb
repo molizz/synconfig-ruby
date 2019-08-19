@@ -46,10 +46,17 @@ module Synconfig
       resp
     end
 
-    def post(namespace, key, value)
+    def set(namespace, key, value)
       url = @server_url + "/key"
       param = Param.new namespace, key, value
-      resp = super(url, param.to_json, headers)
+      resp = self.post(url, param.to_json, headers)
+      resp
+    end
+
+    def del(namespace, key )
+      url = @server_url + "/key"
+      param = Param.new namespace, key
+      resp = self.delete(url, param.to_json, headers)
       resp
     end
 

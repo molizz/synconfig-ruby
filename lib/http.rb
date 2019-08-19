@@ -5,11 +5,15 @@ class Http
   protected
 
   def get(url, body, headers = {}, &block)
-    http_client(:get, url, body, headers, &block)
+    http_client :get, url, body, headers, &block
   end
 
   def post(url, body, headers = {}, &block)
-    http_client(:post, url, body, headers, &block)
+    http_client :post, url, body, headers, &block
+  end
+
+  def delete(url, body, headers = {}, &block)
+    http_client :delete, url, body, headers, &block
   end
 
   private
