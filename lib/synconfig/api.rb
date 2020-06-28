@@ -11,10 +11,10 @@ module Synconfig
     attr_accessor :key
     attr_accessor :value
 
-    def initialize(n, k, v='')
+    def initialize(n, k, v={})
       self.namespace = "#{n}"
       self.key = "#{k}"
-      self.value = "#{v}"
+      self.value = v
     end
 
     def to_json
